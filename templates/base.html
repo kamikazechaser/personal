@@ -1,0 +1,83 @@
+{% import "macros/head.html" as head -%}
+{% import "macros/opengraph.html" as social -%}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {%- block general_meta -%}
+    {{ head::general_meta() }}
+    {%- endblock general_meta -%}
+
+    {%- block og_preview -%}
+    {{ social::og_preview() }}
+    {%- endblock og_preview -%}
+
+    {% block rss %}
+    <link rel="alternate" type="application/rss+xml" title="{{config.title}}" href="{{ get_url(path="atom.xml",
+        trailing_slash=false) | safe}}">
+    {% endblock %}
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"> 
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet"> -->
+
+    <link rel="stylesheet" href="{{ get_url(path="css/base.css", trailing_slash=false) | safe }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js"
+        integrity="sha512-7x3zila4t2qNycrtZ31HO0NnJr8kg2VI67YLoRSyi9hGhRN66FHYWr7Axa9Y1J9tGYHVBPqIjSE1ogHrJTz51g=="
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <a class="site-name" href="/">
+            <h1>Mohamed Sohail</h1>
+        </a>
+        <div class="site-description">
+            <p>Tech and other random takes</p>
+            <!-- <div class="search-container">
+                <span class="search-icon"><i data-feather="search"></i></span>
+                <input id="search" type="search" placeholder="Search">
+                <div class="search-results">
+                    <div class="search-results__items"></div>
+                </div>
+            </div> -->
+        </div>
+        <nav>
+            <div class="links">
+                {% for menu_link in config.extra.menu_links %}
+                {% set link_url = menu_link.url | replace(from="$BASE_URL", to=config.base_url) %}
+                <a {% if current_url and current_url==link_url %}class="active" {% endif %}
+                    href="{{ link_url | safe}} ">{{menu_link.name}}
+                </a>
+                {% endfor %}
+            </div>
+        </nav>
+    </header>
+    <article>{% block content %} {% endblock %}</article>
+    <footer>
+        <div class="social">
+            <!-- <ul>
+                <li>
+                    <a href="{{ get_url(path="atom.xml", trailing_slash=false) | safe}}" title="{{config.title}}"><i
+                            data-feather="rss"></i></a>
+                </li>
+            </ul> -->
+            <p>
+                Hosted on <a href="https://ipfs.io/" target="_blank" rel="noopener noreferrer">IPFS</a>
+            </p>
+        </div>
+        <p>
+            Copyleft CC-BY-SA-4.0
+        </p>
+    </footer>
+    <script defer data-domain="mrkaran.dev" src="https://pls.mrkaran.dev/pls.js"></script>
+    <script>
+        feather.replace();
+    </script>
+    <!-- <script type="text/javascript" src="{{ get_url(path="elasticlunr.min.js") |safe }}"></script>
+    <script type="text/javascript" src="{{ get_url(path="search_index.en.js") | safe }}"></script>
+    <script type="text/javascript" src="{{ get_url(path="js/search.js") | safe }}"></script> -->
+</body>
+
+</html>
