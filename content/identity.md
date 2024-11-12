@@ -5,8 +5,7 @@
 
 Email addresses:
 
-- hello at sohailazim dot com
-- mohamedsohailazim at gmail dot com
+- ping at sohailazim dot com
 
 PGP Fingerprints:
 
@@ -15,10 +14,9 @@ PGP Fingerprints:
 
 My other identities:
 
-- Twitter: [@the_sohail_azim](https://twitter.com/the_sohail_azim)
+- Bluesky: [@sohailazim.bsky.social](https://bsky.app/profile/sohailazim.bsky.social)
 - GitHub: [kamikazechaser](https://github.com/kamikazechaser)
 - Stackoverflow: [Mohamed Sohail](https://stackoverflow.com/users/6004371/mohamed-sohail)
 - IMDB: [Mohamed Sohail](https://www.imdb.com/user/ur28043100/)
 - Spotify: [Mohamed Sohail](https://open.spotify.com/user/22letf42fwdloe4vuakqozkpi)
 - Last.fm: [kamikazechaser](https://www.last.fm/user/kamikazechaser)
-- Telegram: [kamikazechaser](https://t.me/kamikazechaser)
